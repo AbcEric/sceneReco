@@ -3,11 +3,11 @@ import sys
 sys.path.insert(1, "./crnn")
 
 import random
-import torch
-import torch.backends.cudnn as cudnn
-import torch.optim as optim
-import torch.utils.data
-from torch.autograd import Variable 
+# import torch
+# import torch.backends.cudnn as cudnn
+# import torch.optim as optim
+# import torch.utils.data
+# from torch.autograd import Variable
 import numpy as np
 import os
 import util
@@ -83,8 +83,3 @@ def crnnRec(model,converter,im,text_recs):
        print(index)
        print(sim_pred)
        index = index + 1
-       
-       
-
-
-

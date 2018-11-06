@@ -1,6 +1,7 @@
 
 import sys
 import numpy as np
+
 class cfg:
     MEAN=np.float32([102.9801, 115.9465, 122.7717])
     TEST_GPU_ID=0
@@ -22,15 +23,15 @@ def init():
     sys.path.insert(0, "./CTPN/tools")
     sys.path.insert(0, "./CTPN/caffe/python")
     sys.path.insert(0, "./CTPN/src")
+
 init()
 
 from other import draw_boxes, resize_im, CaffeModel
-import cv2, os, caffe
+#import cv2, os, caffe
+import cv2, os
 from detectors import TextProposalDetector, TextDetector
 import os.path as osp
 from utils.timer import Timer
-
-
 
 def ctpnSource():
     DEMO_IMAGE_DIR = "img/"
@@ -56,9 +57,3 @@ def getCharBlock(text_detector,im):
 
     text_recs = draw_boxes(tmp, text_lines, caption='im_name', wait=True)
     return tmp,text_recs
-
-
-    
-
-
-
